@@ -40,7 +40,7 @@ Although the original challenge did not include interactive states, I implemente
 
 - 🌎 [Live site](https://vimpdev.github.io/fem-03-single-price-grid-component/)
 
-<!-- - 👩‍💻 [Frontend Mentor solution](https://your-solution-url.com) -->
+- 👩‍💻 [Frontend Mentor solution](https://www.frontendmentor.io/solutions/semantic-and-accessible-single-price-grid-component-srENlcQVNf)
 
 ---
 
