@@ -1,0 +1,255 @@
+@font-face {
+  font-family: 'Karla';
+  src: url('./../assets/fonts/Karla.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 200 800;
+}
+
+
+:root {
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --blue: hsl(212, 100%, 34%);
+  --green-400: hsl(71, 73%, 54%);
+  --green-700: hsl(71, 62%, 27%);
+  --gray-500: hsl(218, 11%, 48%);
+  --gray-600: hsl(218, 0%, 35%);
+  --teal-500: hsl(179, 62%, 43%);
+  --teal-600: hsl(179, 62%, 39%);
+  --teal-400: hsl(179, 48%, 52%);
+  --teal-100: hsl(204, 43%, 93%);
+  --ff-base: 'Karla', sans-serif;
+  --bd-radius: 8px;
+}
+
+
+body {
+  min-block-size: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  font-family: var(--ff-base);
+  font-size: 1rem;
+  background-color: var(--teal-100);
+}
+
+
+.fs-xs {
+  font-size: 0.8rem;
+}
+
+.fs-s {
+  font-size: 0.875rem;
+}
+
+.fs-m {
+  font-size: 1rem;
+}
+
+.fs-l {
+  font-size: 1.125rem;
+}
+
+.fs-xl {
+  font-size: 1.5rem;
+}
+
+.fs-xxl {
+  font-size: 2rem;
+}
+
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+
+.ls-15 {
+  letter-spacing: -.15px;
+}
+
+.ls-22 {
+  letter-spacing: -.22px;
+}
+
+.ls-25 {
+  letter-spacing: -.25px;
+}
+
+.ls-40 {
+  letter-spacing: -.4px;
+}
+
+
+.lh-115 {
+  line-height: 1.15;
+}
+
+.lh-143 {
+  line-height: 1.43;
+}
+
+.lh-145 {
+  line-height: 1.45;
+}
+
+.lh-160 {
+  line-height: 1.6;
+}
+
+.lh-165 {
+  line-height: 1.65;
+}
+
+
+.card {
+  inline-size: max(19.4375rem, 82.935vw);
+  max-inline-size: 24rem;
+
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "subscription"
+    "features";
+  border-radius: var(--bd-radius);
+  box-shadow: 0 15px 30px hsl(from var(--blue) h s l/.15);
+  overflow: hidden;
+}
+
+.card__header,
+.card__subscription,
+.card__features {
+  padding-inline: 2.51rem;
+}
+
+.card__header {
+  grid-area: header;
+  padding-block: 2.55rem;
+  background-color: var(--white);
+}
+
+.card__subscription,
+.card__features {
+  padding-top: 2.55rem;
+  padding-bottom: 2.45rem;
+  color: var(--white);
+  text-shadow: 0 0 .1px var(--black);
+}
+
+.card__subscription {
+  grid-area: subscription;
+  background-color: var(--teal-500);
+}
+
+.card__features {
+  grid-area: features;
+  background-color: var(--teal-400);
+}
+
+.card__title {
+  color: var(--teal-600);
+}
+
+.card__highlight {
+  margin-top: 1.55rem;
+  color: var(--green-700);
+}
+
+.card__description {
+  margin-top: .65rem;
+  color: var(--gray-500);
+}
+
+.card__price {
+  margin-top: 1.15rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: .8rem;
+}
+
+.card__price-details {
+  margin-top: 0.2rem;
+}
+
+.card__button {
+  --bd-radius: 5px;
+
+  inline-size: 100%;
+  margin-top: 1.6rem;
+  padding-block: .776rem;
+  display: inline-block;
+  background-color: var(--green-400);
+  color: var(--gray-600);
+  border-radius: var(--bd-radius);
+  box-shadow: 0 10px 10px hsl(from var(--black) h s l/.09);
+  cursor: pointer;
+  transition: filter .2s ease-in-out;
+}
+
+.card__list {
+  margin-top: 1.15rem;
+}
+
+.attribution {
+  padding-bottom: 1rem;
+  color: var(--green-700);
+}
+
+.attribution__link {
+  margin-inline: .3rem;
+  position: relative;
+}
+
+.attribution__link::after {
+  content: '';
+  position: absolute;
+  bottom: -1.8px;
+  right: 0;
+  inline-size: 100%;
+  block-size: 1.8px;
+  background-color: currentColor;
+  transition: inline-size .25s ease-in-out;
+}
+
+
+
+@media (width >=48rem) {
+  .card {
+    max-inline-size: 39.6875rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "header header"
+      "subscription features";
+  }
+}
+
+
+
+*:focus-visible {
+  outline: 2px dotted currentColor;
+  outline-offset: 3px;
+}
+
+.card__button:focus-visible,
+.card__button:hover {
+  filter: contrast(1.5);
+}
+
+.attribution__link:focus-visible::after,
+.attribution__link:hover::after {
+  inline-size: 0;
+}
